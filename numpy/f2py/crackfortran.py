@@ -524,7 +524,7 @@ def readfortrancode(ffile, dowithline=show, istop=1):
                 "Flag sourcecodeform must be either 'fix' or 'free': %s" % repr(sourcecodeform))
         filepositiontext = 'Line #%d in %s:"%s"\n\t' % (
             fin.filelineno() - 1, currentfilename, l1)
-        m = includeline.match(origfinalline)
+        m = None#includeline.match(origfinalline)
         if m:
             fn = m.group('name')
             if os.path.isfile(fn):
@@ -553,7 +553,7 @@ def readfortrancode(ffile, dowithline=show, istop=1):
     origfinalline = ll
     filepositiontext = 'Line #%d in %s:"%s"\n\t' % (
         fin.filelineno() - 1, currentfilename, l1)
-    m = includeline.match(origfinalline)
+    m = None#includeline.match(origfinalline)
     if m:
         fn = m.group('name')
         if os.path.isfile(fn):
